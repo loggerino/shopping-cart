@@ -32,6 +32,28 @@ function App() {
     }
   };
 
+  const handleIncreaseQuantity = (cartItemId) => {
+    setCartItems((prevCartItems) =>
+      prevCartItems.map((item) =>
+        item.product.id === cartItemId ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
+  };
+
+  const handleDecreaseQuantity = (cartItemId) => {
+    setCartItems((prevCartItems) =>
+      prevCartItems.map((item) =>
+        item.product.id === cartItemId
+          ? { ...item, quantity: Math.max(1, item.quantity - 1) }
+          : item
+      )
+    );
+  };
+
+  const handleRemoveItem = (cartItemId) => {
+    setCartItems((prevCartItems) => prevCartItems.filter((item) => item.product.id !== cartItemId));
+  };
+
   return (
     <Router>
       <div>
@@ -40,7 +62,16 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route
             path="/shop"
-            element={<ShoppingPage products={products} addToCart={addToCart} cartItems={cartItems} />}
+            element={
+              <ShoppingPage
+                products={products}
+                addToCart={addToCart}
+                cartItems={cartItems}
+                handleIncreaseQuantity={handleIncreaseQuantity}
+                handleDecreaseQuantity={handleDecreaseQuantity}
+                onRemoveItem={handleRemoveItem}
+              />
+            }
           />
         </Routes>
       </div>
