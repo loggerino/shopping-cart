@@ -16,23 +16,20 @@ function ProductCard({ product, addToCart }) {
 
     return (
         <div className="border p-4">
-            <img src={image} alt={title} className="mx-auto mb-2" style={{ width: '150px' }} />
+            <div className="relative" style={{ height: '300px' }}>
+                <img src={image} alt={title} className="object-contain w-full h-full" style={{ maxHeight: '100%', maxWidth: '100%' }} />
+            </div>
             <h2 className="text-xl font-semibold mb-2">{title}</h2>
-            <p className="text-gray-600">${price}</p>
+            <p className="text-gray-600 ">${price}</p>
             <div className="flex items-center mt-2">
-                <button className="bg-blue-500 text-white px-2 py-1 rounded" onClick={() => addToCart(product, quantity)}>
+                <button className="bg-blue-500 text-white px-5 py-1 rounded" onClick={() => addToCart(product, quantity)}>
                     Add To Cart
                 </button>
                 <div className="ml-4 flex items-center border rounded">
                     <button className="px-2" onClick={handleDecrement}>
                         -
                     </button>
-                    <input
-                        type="number"
-                        value={quantity}
-                        onChange={(e) => setQuantity(parseInt(e.target.value))}
-                        className="w-12 text-center border-r border-l"
-                    />
+                    <div className="px-2 text-center border-r border-l">{quantity}</div>
                     <button className="px-2" onClick={handleIncrement}>
                         +
                     </button>

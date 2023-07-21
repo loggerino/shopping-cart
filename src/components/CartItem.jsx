@@ -1,7 +1,12 @@
-function CartItem() {
+function CartItem({ cartItem }) {
+    const { product, quantity } = cartItem;
+
     return (
-        <h1>this is a cart</h1>
-    )
-}
+        <div>
+            <p>{product.title} - Quantity: {quantity}</p>
+        </div>
+    );
+};
+
 
 export default CartItem
