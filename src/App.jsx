@@ -1,13 +1,16 @@
-import ProductCard from "./components/ProductCard";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ShoppingPage from "./components/ShoppingPage";
+import HomePage from "./components/HomePage";
+import Navbar from './components/Navbar';
 
 export default function App() {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-      <ShoppingPage></ShoppingPage>
-    </>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/shop" element={<ShoppingPage />} />
+      </Routes>
+    </Router>
   )
 }
