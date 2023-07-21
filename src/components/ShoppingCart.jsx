@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CartItem from './CartItem';
 
 function ShoppingCart({ cartItems }) {
     const totalAmount = cartItems.reduce((total, item) => total + item.product.price * item.quantity, 0);
+    const [isCartOpen, setCartOpen] = useState(true)
     const handleCloseCart = () => {
-
+        setCartOpen(false);
+    }
+    if (!isCartOpen) {
+        return null;
     }
 
     return (
