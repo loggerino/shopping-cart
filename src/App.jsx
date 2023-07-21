@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ProductCard from './components/ProductCard';
-import ShoppingCart from './components/ShoppingCart';
 import Navbar from './components/Navbar';
 import HomePage from './components/HomePage';
 import ShoppingPage from './components/ShoppingPage';
