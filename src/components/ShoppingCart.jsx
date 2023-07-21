@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import CartItem from './CartItem';
 
-function ShoppingCart({ cartItems, onRemoveItem, handleIncreaseQuantity, handleDecreaseQuantity }) {
+function ShoppingCart({ cartItems, handleRemoveItem, handleIncreaseQuantity, handleDecreaseQuantity }) {
     const totalAmount = cartItems.reduce((total, item) => total + item.product.price * item.quantity, 0);
     const [isCartOpen, setCartOpen] = useState(true);
 
@@ -25,9 +25,9 @@ function ShoppingCart({ cartItems, onRemoveItem, handleIncreaseQuantity, handleD
                 <CartItem
                     key={cartItem.product.id}
                     cartItem={cartItem}
-                    onIncreaseQuantity={handleIncreaseQuantity}
-                    onDecreaseQuantity={handleDecreaseQuantity}
-                    onRemoveItem={onRemoveItem}
+                    handleIncreaseQuantity={handleIncreaseQuantity}
+                    handleDecreaseQuantity={handleDecreaseQuantity}
+                    handleRemoveItem={handleRemoveItem}
                 />
             ))}
             <p className="text-xl font-semibold mt-4">Total Amount: ${totalAmount.toFixed(2)}</p>

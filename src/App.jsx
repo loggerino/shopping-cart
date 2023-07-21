@@ -57,7 +57,12 @@ function App() {
   return (
     <Router>
       <div>
-        <Navbar cartItems={cartItems} />
+        <Navbar
+          cartItems={cartItems}
+          handleIncreaseQuantity={handleIncreaseQuantity}
+          handleDecreaseQuantity={handleDecreaseQuantity}
+          handleRemoveItem={handleRemoveItem}
+        />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route
@@ -67,9 +72,6 @@ function App() {
                 products={products}
                 addToCart={addToCart}
                 cartItems={cartItems}
-                handleIncreaseQuantity={handleIncreaseQuantity}
-                handleDecreaseQuantity={handleDecreaseQuantity}
-                onRemoveItem={handleRemoveItem}
               />
             }
           />
