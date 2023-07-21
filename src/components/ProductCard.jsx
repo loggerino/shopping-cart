@@ -5,7 +5,6 @@ const ProductCard = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        // Fetch products from the API using axios
         axios.get('https://fakestoreapi.com/products')
             .then((response) => {
                 setProducts(response.data);
@@ -16,8 +15,6 @@ const ProductCard = () => {
     }, []);
 
     const addToCart = (product) => {
-        // Implement logic to add the product to the cart
-        // You can use state or Redux to manage the cart items
         console.log('Added to cart:', product);
     };
 
@@ -35,7 +32,6 @@ const ProductCard = () => {
                         >
                             Add To Cart
                         </button>
-                        {/* Implement quantity input field and increment/decrement buttons here */}
                     </div>
                 </div>
             ))}
