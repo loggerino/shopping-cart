@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductCard from './ProductCard';
+import { Link } from 'react-router-dom';
 
 function HomePage({ featuredProducts, addToCart }) {
     return (
@@ -7,11 +8,13 @@ function HomePage({ featuredProducts, addToCart }) {
             <section className="bg-gray-800 text-white py-20">
                 <div className="container mx-auto text-center">
                     <h1 className="text-4xl font-bold mb-4">Welcome to Our E-Commerce Store</h1>
-                    <p className="text-lg mb-8">Explore our wide range of products and find the best deals!</p>
-                    <button className="bg-blue-500 text-white px-6 py-2 rounded">Shop Now</button>
+                    <p className="text-lg mb-5">Explore our wide range of products and find the best deals!</p>
+                    <Link to="/shop">
+                        <button className="bg-blue-500 text-white px-8 py-3 rounded">Shop Now</button>
+                    </Link>
                 </div>
             </section>
-            <section className="py-16">
+            <section className="p-10 bg-gray-100">
                 <div className="container mx-auto">
                     <h2 className="text-3xl font-bold mb-8">Featured Products</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

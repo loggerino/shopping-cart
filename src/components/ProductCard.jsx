@@ -15,12 +15,12 @@ function ProductCard({ product, addToCart }) {
     };
 
     return (
-        <div className="border p-4 bg-white shadow-sm">
+        <div className="border p-4 bg-white shadow-md">
             <div className="relative" style={{ height: '300px' }}>
                 <img src={image} alt={title} className="object-contain w-full h-full" style={{ maxHeight: '100%', maxWidth: '100%' }} />
             </div>
             <h2 className="text-xl font-semibold mb-2">{title}</h2>
-            <p className="text-gray-600 ">${price}</p>
+            <p className="text-gray-600">${price}</p>
             <div className="flex items-center mt-2">
                 <button className="bg-blue-500 text-white px-5 py-1 rounded" onClick={() => addToCart(product, quantity)}>
                     Add To Cart

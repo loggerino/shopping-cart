@@ -65,7 +65,7 @@ function App() {
           handleRemoveItem={handleRemoveItem}
         />
         <Routes>
-          <Route path="/" element={<HomePage featuredProducts={featuredProducts} />} />
+          <Route path="/" element={<HomePage addToCart={addToCart} featuredProducts={featuredProducts} />} />
           <Route
             path="/shop"
             element={
