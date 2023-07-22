@@ -32,6 +32,11 @@ function ShoppingCart({ cartItems, handleRemoveItem, handleIncreaseQuantity, han
                 />
             ))}
             <p className="text-xl font-semibold mt-2">Total Amount: ${totalAmount.toFixed(2)}</p>
+            <div className="flex justify-center mt-6">
+                <button className="bg-green-500 text-white px-5 py-1 rounded">
+                    Checkout
+                </button>
+            </div>
         </div>
     );
 }

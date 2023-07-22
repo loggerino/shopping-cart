@@ -3,11 +3,13 @@ import ProductCard from './ProductCard';
 
 function ShoppingPage({ products, addToCart }) {
   return (
-    <div>
-      <div className="p-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} addToCart={addToCart} />
-        ))}
+    <div className="bg-gray-100">
+      <div>
+        <div className="p-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} addToCart={addToCart} />
+          ))}
+        </div>
       </div>
     </div>
   );

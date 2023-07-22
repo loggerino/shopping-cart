@@ -15,7 +15,7 @@ function ProductCard({ product, addToCart }) {
     };
 
     return (
-        <div className="border p-4">
+        <div className="border p-4 bg-white shadow-sm">
             <div className="relative" style={{ height: '300px' }}>
                 <img src={image} alt={title} className="object-contain w-full h-full" style={{ maxHeight: '100%', maxWidth: '100%' }} />
             </div>

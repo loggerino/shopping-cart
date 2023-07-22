@@ -8,6 +8,7 @@ import ShoppingPage from './components/ShoppingPage';
 function App() {
   const [products, setProducts] = useState([]);
   const [cartItems, setCartItems] = useState([]);
+  const featuredProducts = products.slice(0, 4);
 
   useEffect(() => {
     axios.get('https://fakestoreapi.com/products')
@@ -64,7 +65,7 @@ function App() {
           handleRemoveItem={handleRemoveItem}
         />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePage featuredProducts={featuredProducts} />} />
           <Route
             path="/shop"
             element={
