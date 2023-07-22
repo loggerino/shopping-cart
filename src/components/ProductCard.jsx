@@ -26,7 +26,7 @@ function ProductCard({ product, addToCart }) {
                     Add To Cart
                 </button>
                 <div className="ml-4 flex items-center border rounded">
-                    <button className="px-2" onClick={handleDecrement}>
+                    <button className="px-2 " onClick={handleDecrement}>
                         -
                     </button>
                     <div className="px-2 text-center border-r border-l">{quantity}</div>

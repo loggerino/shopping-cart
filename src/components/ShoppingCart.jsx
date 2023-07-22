@@ -15,12 +15,13 @@ function ShoppingCart({ cartItems, handleRemoveItem, handleIncreaseQuantity, han
 
     return (
         <div className="bg-white p-4 rounded shadow-lg absolute top-14 right-4 z-10" style={{ minWidth: '20rem' }}>
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center justify-between mb-2">
                 <h2 className="text-xl font-semibold">Shopping Cart</h2>
                 <button className="bg-red-500 text-white px-3 py-1 rounded" onClick={handleCloseCart}>
                     &times;
                 </button>
             </div>
+            <hr className='mb-2' />
             {cartItems.map((cartItem) => (
                 <CartItem
                     key={cartItem.product.id}
@@ -30,7 +31,7 @@ function ShoppingCart({ cartItems, handleRemoveItem, handleIncreaseQuantity, han
                     handleRemoveItem={handleRemoveItem}
                 />
             ))}
-            <p className="text-xl font-semibold mt-4">Total Amount: ${totalAmount.toFixed(2)}</p>
+            <p className="text-xl font-semibold mt-2">Total Amount: ${totalAmount.toFixed(2)}</p>
         </div>
     );
 }
